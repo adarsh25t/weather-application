@@ -9,6 +9,8 @@ const generateJWTToken = (user) => {
     return token;
 }
 
+
+
 module.exports = {
     generateJWTToken,
 };
