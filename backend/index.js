@@ -21,6 +21,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // SETUP THE ROUTES
+app.use('/api/refresh')
 app.use('/api/user',userRoute);
 
 const port = process.env.PORT || 3000;
