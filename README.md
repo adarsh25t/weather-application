@@ -51,7 +51,9 @@ This project is a weather dashboard application that allows users to register, l
 
 ### Environment Variables
 Create a `.env` file in the root of your project and add the following variables:
-
+1. DATABASE_URL
+2. PORT
+3. JWT_SECRET
 
 
 ### Installation
