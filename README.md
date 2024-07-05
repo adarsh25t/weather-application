@@ -1,7 +1,7 @@
 # weather-application Project
 
 ## Overview
-This project is a weather dashboard application that allows users to register, log in, and view current, forecasted, and historical weather data for various cities. Users can also save their favorite cities and easily access weather information for those cities.
+This project is a weather-application application that allows users to register, log in, and view current, forecasted, and historical weather data for various cities. Users can also save their favorite cities and easily access weather information for those cities.
 
 ## Features
 1. **User Authentication**:
