@@ -38,7 +38,8 @@ function SearchWeather() {
                 feelsLike: `${data.main.feels_like}°C`,
                 tempMax: `${data.main.temp_max}°C`,
                 tempMin: `${data.main.temp_min}°C`,
-                weatherDescription: data.weather[0].description
+                weatherDescription: data.weather[0].description,
+                name: data.name
             };
 
             setWeatherData(weatherDatas);
@@ -69,7 +70,6 @@ function SearchWeather() {
         }
     }, []);
 
-    console.log(location);
 
     return (
         <div className='w-full flex flex-col items-center justify-center mt-10'>

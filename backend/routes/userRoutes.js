@@ -5,11 +5,13 @@ const { addFavoriteCity } = require('../controllers/userControllers/addFavoriteC
 const authenticateToken = require('../middleware/authenticateToken');
 const getAllUserCities = require('../controllers/userControllers/getAllUserCitites');
 const UserLogOut = require('../controllers/userControllers/userLogout');
+const protectedRoute = require('../middleware/protectedRoute');
 
 const userRoute = express.Router();
 
 userRoute.post('/register', createNewUser);
 userRoute.post('/login',LoginUser);
+userRoute.get('/check-login',authenticateToken,protectedRoute)
 userRoute.get('/logout',authenticateToken, UserLogOut);
 userRoute.post('/favourite',authenticateToken, addFavoriteCity);
 userRoute.get('/favourite', authenticateToken, getAllUserCities);

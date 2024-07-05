@@ -4,6 +4,7 @@ import Spinner from '../components/Spinner';
 import { url } from '../assets/assets';
 import axios from 'axios';
 import { MyContext } from '../Store';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -29,6 +30,12 @@ function Login() {
             setLoading(false);
             setLogin(true)
             navigate('/');
+        }
+        else {
+            toast.error(response.data.message, {
+                position: "top-center"
+            });
+            setLoading(false);
         }
     }
 

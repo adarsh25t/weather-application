@@ -20,6 +20,7 @@ export async function getweather(searchInput) {
             weatherDatas.tempMax = `${data.main.temp_max}°C`;
             weatherDatas.tempMin = `${data.main.temp_min}°C`;
             weatherDatas.weatherDescription = data.weather[0].description;
+            weatherDatas.name = data.name;
 
             return weatherDatas;
 

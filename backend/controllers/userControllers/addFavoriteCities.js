@@ -14,6 +14,17 @@ const addFavoriteCity = async (req, res) => {
             });
         }
 
+        // Retrieve the user with their favorite cities
+        const userResponse = await prisma.user.findUnique({
+            where: { id: req.user.id },
+            select: { favoritecities: true }
+        });
+
+        // Check if the city is already in the user's favorites
+        if (userResponse.favoritecities.includes(req.body.city)) {
+            return res.status(200).json({ message: 'City is already in favorites',success: false });
+        }
+        
         // Add city to favorites array
         const updatedUser = await prisma.user.update({
             where: {

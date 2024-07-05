@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { url } from '../assets/assets'
 import Spinner from '../components/Spinner'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 function Register() {
 
     const [name, setName] = useState('')
@@ -21,15 +22,18 @@ function Register() {
             email,
             password
         }
-        const response = await axios.post(url.register, data,{ withCredentials: true })
+        const response = await axios.post(url.register, data, { withCredentials: true })
         if (response.data.success) {
+            toast.success(response.data.message, {
+                position: "top-center"
+            });
             setName('')
             setEmail('')
             setPassword('')
             setLoading(false);
             navigate('/login');
         }
-        
+
     }
 
     return (
@@ -55,10 +59,10 @@ function Register() {
                             </div>
                             {
                                 loading ?
-                                   <div className="flex justify-center items-center ">
-                                     <Spinner />
-                                   </div> :
-                                <button type="submit" className="w-full text-white bg-gray-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                                    <div className="flex justify-center items-center ">
+                                        <Spinner />
+                                    </div> :
+                                    <button type="submit" className="w-full text-white bg-gray-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
                             }
                             <p className="text-sm font-medium text-gray-600 ">
                                 Already have an account?  <Link to={'/login'} className="font-medium text-primary-600 hover:underline dark:text-primary-500"> Login</Link>
