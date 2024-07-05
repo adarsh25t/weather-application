@@ -3,6 +3,8 @@
 ## Overview
 This project is a weather-application application that allows users to register, log in, and view current, forecasted, and historical weather data for various cities. Users can also save their favorite cities and easily access weather information for those cities.
 
+You can view the live frontend of the project (https://weather-application-eta-tawny.vercel.app/).
+
 ## Features
 1. **User Authentication**:
    - Register and login using JWT (JSON Web Tokens).
