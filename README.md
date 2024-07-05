@@ -1,4 +1,4 @@
-# Weather Dashboard Project
+# weather-application Project
 
 ## Overview
 This project is a weather dashboard application that allows users to register, log in, and view current, forecasted, and historical weather data for various cities. Users can also save their favorite cities and easily access weather information for those cities.
@@ -60,8 +60,8 @@ Create a `.env` file in the root of your project and add the following variables
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/weather-dashboard.git
-   cd weather-dashboard
+   git clone https://github.com/yourusername/weather-application.git
+   cd weather-application
 
 2. Install dependencies:
    npm install
